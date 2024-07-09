@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+/* 버튼 스타일 */
+.nav-button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-button:hover {
+  background-color: #21a1f1;
+}

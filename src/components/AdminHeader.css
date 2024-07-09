@@ -1,0 +1,21 @@
+.admin-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.admin-header-content {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.description {
+  margin-top: 30px;
+  font-weight: lighter;
+  font-size: 1rem;
+}

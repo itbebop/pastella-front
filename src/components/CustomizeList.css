@@ -1,0 +1,93 @@
+/* CustomizeList.css */
+.CustomizeList h1 {
+  margin-bottom: 20px;
+}
+
+.CustomizeList table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.CustomizeList table th,
+.CustomizeList table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.CustomizeList table th {
+  background-color: #f2f2f2;
+}
+
+.CustomizeList .pagination {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  list-style: none;
+  padding: 0;
+  margin: 20px 0; /* 위아래 여백 추가 */
+}
+
+.CustomizeList .pagination li {
+  margin: 0 5px;
+}
+
+.CustomizeList .pagination li a {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.CustomizeList .pagination li.active a {
+  background-color: #007bff;
+  color: white;
+}
+
+.CustomizeList button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.CustomizeList button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.CustomizeList button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.CustomizeList nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 40px; /* 위쪽 여백 추가 */
+}
+
+.CustomizeList nav a,
+.CustomizeList nav button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.CustomizeList nav a:hover,
+.CustomizeList nav button:hover {
+  background-color: #0056b3;
+}

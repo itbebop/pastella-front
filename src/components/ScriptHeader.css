@@ -1,0 +1,62 @@
+/* ScriptHeader.css */
+
+.body-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .form-label {
+    margin-right: 5px; /* 간격 조정 */
+    font-weight: bold;
+    flex: none; /* label의 크기를 고정하지 않음 */
+  }
+  
+  .form-input {
+    padding: 5px;
+    font-size: 16px;
+    flex: 1;
+  }
+  
+  .form-radio {
+    margin-left: 10px;
+    font-weight: normal;
+  }
+  
+  .form-text {
+    margin-left: auto;
+    font-weight: bold;
+  }
+  
+  .tag-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap; /* 드롭다운 리스트를 한 줄에 나열 */
+  }
+  
+  .form-dropdown {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .dropdown-label {
+    margin-right: 5px; /* 간격 조정 */
+    font-weight: bold;
+  }
+  

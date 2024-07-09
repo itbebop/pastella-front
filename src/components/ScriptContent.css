@@ -1,0 +1,387 @@
+/* .easy-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.left-box {
+flex: 1;
+padding: 20px;
+background-color: #f0f0f0;
+margin-right: 10px;
+}
+
+.right-box {
+flex: 7;
+padding: 20px;
+background-color: #e0e0e0;
+}
+
+.content-block {
+display: flex;
+margin-bottom: 20px;
+background-color: #ffffff;
+padding: 10px;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.block-left {
+flex: 1;
+padding: 10px;
+background-color: #f8f8f8;
+margin-right: 10px;
+}
+
+.block-right {
+flex: 7;
+padding: 10px;
+background-color: #f0f0f0;
+}
+
+.delete-script-button, .form-group button {
+background-color: #d9534f;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 4px;
+margin-top: 10px;
+align-self: flex-start;
+}
+
+.study-point-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .study-point-group .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    margin-bottom: 5px;
+  }
+  
+
+.easy-content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .left-box, .right-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .form-select, .form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .study-point-group, .quiz-group, .name-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .name-group .form-group, .study-point-group .form-group {
+    flex: 1;
+  }
+  
+  .content-block {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .block-left {
+    flex: 1;
+  }
+  
+  .block-right {
+    flex: 2;
+  }
+  
+  .delete-script-button, .form-group button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  
+  .form-group button {
+    background-color: #5bc0de;
+  }
+  
+  .form-group button:hover {
+    background-color: #31b0d5;
+  }
+  
+  .delete-script-button:hover {
+    background-color: #c9302c;
+  }
+   */
+
+
+/* ScriptContent.css */
+
+/* .script-content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .script-content-left-box, .script-content-right-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .script-content-left-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-right: 10px;
+  }
+  
+  .script-content-right-box {
+    flex: 7;
+    padding: 20px;
+    background-color: #e0e0e0;
+  }
+  
+  .script-content-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .script-content-form-select, .script-content-form-input, .script-content-form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .script-content-form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .script-content-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .script-content-study-point-group, .script-content-quiz-group, .script-content-name-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .script-content-study-point-group .script-content-form-group, .script-content-name-group .script-content-form-group {
+    flex: 1;
+  }
+  
+  .script-content-content-block {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .script-content-block-left {
+    flex: 1;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin-right: 10px;
+  }
+  
+  .script-content-block-right {
+    flex: 7;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .script-content-delete-script-button, .script-content-form-group button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  
+  .script-content-form-group button {
+    background-color: #5bc0de;
+  }
+  
+  .script-content-form-group button:hover {
+    background-color: #31b0d5;
+  }
+  
+  .script-content-delete-script-button:hover {
+    background-color: #c9302c;
+  } */
+  
+
+
+
+  /* ScriptContent.css */
+
+.script-content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .script-content-inner {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .script-content-left-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-right: 10px;
+  }
+  
+  .script-content-right-box {
+    flex: 3;
+    padding: 20px;
+    background-color: #e0e0e0;
+  }
+  
+  .script-content-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .script-content-form-select, .script-content-form-input, .script-content-form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .script-content-form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .script-content-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .script-content-study-point-group, .script-content-quiz-group, .script-content-name-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .script-content-study-point-group .script-content-form-group, .script-content-name-group .script-content-form-group {
+    flex: 1;
+  }
+  
+  .script-content-content-block {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .script-content-block-left {
+    flex: 1;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin-right: 10px;
+  }
+  
+  .script-content-block-right {
+    flex: 3;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .script-content-delete-script-button, .script-content-form-group button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  
+  .script-content-form-group button {
+    background-color: #5bc0de;
+  }
+  
+  .script-content-form-group button:hover {
+    background-color: #31b0d5;
+  }
+  
+  .script-content-delete-script-button:hover {
+    background-color: #c9302c;
+  }
+  

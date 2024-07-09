@@ -1,0 +1,41 @@
+/* ScriptFooter.css */
+
+.script-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    width: 100%; /* 전체 가로 사이즈를 넓힙니다 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 크기를 설정합니다 */
+  }
+  
+  .script-footer .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .script-footer .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .script-footer .form-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .script-footer .form-textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
