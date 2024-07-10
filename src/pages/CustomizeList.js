@@ -4,7 +4,8 @@ import AdminHeader from '../components/AdminHeader';
 import ReactPaginate from 'react-paginate';
 import '../components/CustomizeList.css';
 import {
-  getCustomizedScripts
+  getCustomizedScripts,
+  deleteScript
 } from '../components/ScriptHandlers';
 
 function CustomizeList() {
@@ -67,7 +68,9 @@ function CustomizeList() {
     if (selectedPost !== null && window.confirm('정말 삭제하시겠습니까?')) {
       setPosts(posts.filter(post => post.id !== selectedPost));
       setSelectedPost(null);
+      console.log('selectedPost: '+selectedPost);
       // connect id에 해당하는 script들도 다 먼저 가져와야 함
+      deleteScript(selectedPost);
       // DELETE /kor-script/connect/{connect_id}
       // DELETE /kor-script/{script_id}
     }
