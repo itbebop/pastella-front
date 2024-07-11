@@ -18,7 +18,8 @@ import {
   getScript,
   createScript,
   postCustomizeData,
-  updateConnect
+  updateConnect,
+  deleteScript
 } from '../components/ScriptHandlers';
 
 function CustomizeDetail() {
@@ -34,14 +35,33 @@ function CustomizeDetail() {
   const [availableNormalIds, setAvailableNormalIds] = useState([2, 3, 4]);
   const [availableDifficultIds, setAvailableDifficultIds] = useState([2, 3, 4]);
 
+  const [inputs, setInputs] = useState({ title: '' });
+
   useEffect(() => {
     if (mode === 'edit' && id) {
-      // id로 스크립트를 가져와서 state를 설정합니다.
-      const fetchScript = async () => {        
+      const fetchScript = async () => {
         const script = await getScript(id);
-        console.log(script);
-        // 스크립트를 state에 설정하는 로직을 추가하세요.
-        // 예를 들어, easyScripts, normalScripts, difficultScripts 중 하나에 설정할 수 있습니다.
+        console.dir(script);        
+        if (script) {
+          // 스크립트 데이터를 상태에 설정하는 로직 추가    
+          //console.log(script.background);
+          const sanitizedScript = {            
+            id: 0,
+            inputs: {
+              ...script,               
+            }          
+          }
+          console.dir([JSON.parse(JSON.stringify(sanitizedScript)), JSON.parse(JSON.stringify({...sanitizedScript, id: 1}))]); 
+          console.log('위가 sanitizedScript, 아래가 init'); 
+          console.dir([JSON.parse(JSON.stringify(initialScript)), JSON.parse(JSON.stringify({...initialScript, id: 1}))]);
+          // console.log('sanitizedScript'); 
+          // console.dir(sanitizedScript);   
+          setEasyScripts([sanitizedScript, sanitizedScript]);
+          console.log('easyScripts ======'); 
+          console.dir(easyScripts);
+          // setNormalScripts([sanitizedScript, sanitizedScript]);
+          // setDifficultScripts([sanitizedScript, sanitizedScript]); 
+        }
       };
       fetchScript();
     }
@@ -49,15 +69,18 @@ function CustomizeDetail() {
 
   const handleCopyScripts = () => {
     alert('스크립트가 복사되었습니다.');
-  };  
+  };
+
+  const handleInputChange = (name, value) => {
+    setInputs(prevInputs => ({ ...prevInputs, [name]: value }));
+  };
 
   const renderContent = (scripts, setScripts, availableIds, setAvailableIds) => (
     <div>
       {scripts.map(script => (
         <ScriptContent
           key={script.id}
-          id={script.id}
-          // title={`언어코드 ${script.id}`}
+          id={script.id}          
           inputs={script.inputs}
           onDelete={() => handleDeleteScript(setScripts, scripts, setAvailableIds, script.id)}
           onInputChange={(inputName, value) => handleInputChange(setScripts, scripts, script.id, inputName, value)}
@@ -71,38 +94,24 @@ function CustomizeDetail() {
     </div>
   );
 
-
-
   const saveScripts = async (scripts, level) => {
     for (const script of scripts) {
-      // console.log('Saving script with the following inputs:');
-      // console.log('languagecode:', script.inputs.languagecode);
-      // console.log('background:', script.inputs.background);
-      // console.log('humancount:', script.inputs.humancount);
-      // console.log('humanA:', script.inputs.humanA);
-      // console.log('humanB:', script.inputs.humanB);
-      // console.log('humanC:', script.inputs.humanC);
-      // console.log('humanD:', script.inputs.humanD);
-      // console.log('script:', script.inputs.script);
-      // console.log('note:', script.inputs.note);
-      // console.log('type:', level);
+      await createScript({
+        languagecode: script.inputs.languagecode,
+        background: script.inputs.background,
+        humancount: script.inputs.humancount,
+        humanA: script.inputs.humanA,
+        humanB: script.inputs.humanB,
+        humanC: script.inputs.humanC,
+        humanD: script.inputs.humanD,
+        script: script.inputs.script,
+        note: script.inputs.note,
+        names: ['', ''], 
+        type: level
+      });
 
-      // await createScript({
-      //   languagecode: script.inputs.languagecode,
-      //   background: script.inputs.background,
-      //   humancount: script.inputs.humancount,
-      //   humanA: script.inputs.humanA,
-      //   humanB: script.inputs.humanB,
-      //   humanC: script.inputs.humanC,
-      //   humanD: script.inputs.humanD,
-      //   script: script.inputs.script,
-      //   note: script.inputs.note,
-      //   type: level
-      // });
-
-      // 데이터 객체 생성
-      const customizeData = {
-        title: "Sample Title",
+      const headerData = {
+        title: script.inputs.title,
         sex: "male",
         age: "30",
         job: "Engineer",
@@ -116,28 +125,19 @@ function CustomizeDetail() {
         link: "http://example.com",
         used: false
       };
-
+      
       const scriptData = {
-        // languagecode: script.inputs.languagecode,
-        // background: script.inputs.background,
-        // humancount: script.inputs.humancount,
-        // humanA: script.inputs.humanA,
-        // humanB: script.inputs.humanB,
-        // humanC: script.inputs.humanC,
-        // humanD: script.inputs.humanD,
-        // script: script.inputs.script,
-        // note: script.inputs.note,
-        // type: level
-        languagecode: "en",  // 예: 영어
-        background: "background.jpg",  // 예: 배경 이미지 파일명
-        humancount: 4,  // 예: 4명
-        humanA: "John",  // 예: 사람 A의 이름
-        humanB: "Doe",  // 예: 사람 B의 이름
-        humanC: "Alice",  // 예: 사람 C의 이름
-        humanD: "Bob",  // 예: 사람 D의 이름
-        script: "This is a sample script.",  // 예: 스크립트 내용
-        note: "This is a sample note.",  // 예: 노트 내용
-        type: "custom"  // 예: 레벨 타입
+        languagecode: script.inputs.languagecode,
+        background: script.inputs.background,
+        humancount: script.inputs.humancount,
+        humanA: script.inputs.humanA,
+        humanB: script.inputs.humanB,
+        humanC: script.inputs.humanC,
+        humanD: script.inputs.humanD,
+        script: script.inputs.script,
+        note: script.inputs.note,
+        names: ['', ''], 
+        type: level
       };
 
       const connectData = {
@@ -157,46 +157,43 @@ function CustomizeDetail() {
         "used": false
       }
       
-      console.log('customizeData', customizeData);
       try {
-        const response = await postCustomizeData(customizeData);
+        const response = '';
+        //const response = await postCustomizeData(headerData);
         console.log('Response Data:', response);
+        console.log('======headerData: ', headerData);
       } catch (error) {
         console.error('Error:', error);
       }
+      alert('11');
       const scriptId = await createScript(scriptData);
+      console.log('scriptId: '+scriptId); 
       updateConnect(id, scriptId, "Customize", connectData);
-      // updateConnect = async (connect_id, scriptId, type, data) => {
     }
   };
 
   const handleSaveAndTestAPIs = async () => {
-    // await saveScripts(easyScripts, 'easy');
-    // await saveScripts(normalScripts, 'normal');
-    // await saveScripts(difficultScripts, 'difficult');
-
-    console.log('mode', mode);
-    if (mode === 'create') {
+    if (mode === 'create') {      
       await saveScripts(easyScripts, 'easy');
-      await saveScripts(normalScripts, 'normal');
-      await saveScripts(difficultScripts, 'difficult');
+      // await saveScripts(normalScripts, 'normal');
+      // await saveScripts(difficultScripts, 'difficult');
     } else if (mode === 'edit' && id) {
-      // 수정 로직을 추가하세요.
-      // 예를 들어, updateScript를 사용하여 수정된 스크립트를 서버에 저장할 수 있습니다.
       await updateScript(id, easyScripts);
       await updateScript(id, normalScripts);
       await updateScript(id, difficultScripts);
     }
 
-    // 저장이 완료된 후 목록 페이지로 이동
-    // navigate('/customize_list');
+    navigate('/customize_list');
   };
 
   return (
     <div className="Customize">
       <AdminHeader title="Customize Page" description="나의 개성을 살리는 Personalized 영어학습" />
       <div className="body-content">
-        <ScriptHeader />
+        <ScriptHeader 
+          inputs={inputs} // inputs 전달
+          onInputChange={handleInputChange} // onInputChange 전달
+        />
         <div className="tabs">
           <button onClick={() => setActiveTab('easy')} className={activeTab === 'easy' ? 'active' : ''}>Easy</button>
           <button onClick={() => setActiveTab('normal')} className={activeTab === 'normal' ? 'active' : ''}>Normal</button>

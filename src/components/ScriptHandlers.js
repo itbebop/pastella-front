@@ -40,13 +40,13 @@ export const handleInputChange = (setScripts, scripts, id, inputName, value) => 
     if (script.id === id) {
       const newInputs = { ...script.inputs };
       const inputNames = inputName.split('.');
-      if (inputNames.length === 2) {
-        newInputs[inputNames[0]][parseInt(inputNames[1])] = value;
-      } else if (inputNames.length === 3) {
-        newInputs[inputNames[0]][parseInt(inputNames[1])][inputNames[2]] = value;
-      } else {
-        newInputs[inputName] = value;
-      }
+      // if (inputNames.length === 2) {
+      //   newInputs[inputNames[0]][parseInt(inputNames[1])] = value;
+      // } else if (inputNames.length === 3) {
+      //   newInputs[inputNames[0]][parseInt(inputNames[1])][inputNames[2]] = value;
+      // } else {
+      //   newInputs[inputName] = value;
+      // }
       return { ...script, inputs: newInputs };
     }
     return script;
