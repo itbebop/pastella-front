@@ -5,10 +5,15 @@ function ScriptHeader({ inputs, onInputChange }) { // props를 받도록 수정
   return (
     <div className="body-content">
       <div className="form-group">
-        <label htmlFor="titleInput" className="form-label">Title:</label>
-        <input type="text" id="titleInput" className="form-input" 
-        value={inputs.title}
-        onChange={(e) => onInputChange('title', e.target.value)} />
+        <label htmlFor="titleInput" className="form-label">COVER</label>
+        <div className="input-group">
+          <label htmlFor="titleInput" className="form-label sub-label">Cover Title</label>
+          <input type="text" id="titleInput" className="form-input" 
+          value={inputs.title}
+          onChange={(e) => onInputChange('title', e.target.value)} 
+          placeholder="표제를 입력해주세요" 
+          />
+        </div>
         <span className="form-label">Used:</span>
         <label htmlFor="used-yes" className="form-radio">Yes</label>
         <input type="radio" name="used" id="used-yes" value="yes" />

@@ -19,6 +19,17 @@
     flex: none; /* label의 크기를 고정하지 않음 */
   }
   
+  .sub-label {
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
   .form-input {
     padding: 5px;
     font-size: 16px;
