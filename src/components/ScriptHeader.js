@@ -146,9 +146,92 @@ function ScriptHeader({ inputs, onInputChange }) { // props를 받도록 수정
               <input type="text" id="hobby" className="form-input" placeholder="취미를 입력하세요" />
             </div>
           </div>
-        </div>
+         </div>
+        </div>      
+       </div>
+      <div className='depth-group'>
+        <div className="row-group">
+          <div className="column-group">
+            <label htmlFor="mbti-me" className="form-label sub-label">1Depth</label>
+            <select className="form-dropdown" id="mbti-me" defaultValue="">
+              <option value="" disabled>선택</option>
+
+            </select>
+          </div>
+          <div className="column-group">
+            <label htmlFor="mbti-me" className="form-label sub-label">2Depth</label>
+            <select className="form-dropdown" id="mbti-me" defaultValue="">
+              <option value="" disabled>선택</option>
+
+            </select>
+          </div>
+          <div className="column-group">
+            <label htmlFor="mbti-me" className="form-label sub-label">3Depth</label>
+            <select className="form-dropdown" id="mbti-me" defaultValue="">
+              <option value="" disabled>선택</option>
+
+            </select>
+          </div>
+          <button className='button-add'
+                  type="button" 
+                  onClick={() => alert('11')} 
+                  //disabled={inputs.names.length >= 4}
+                >추가하기</button>
+        </div>        
       </div>
-    </div>
+      
+      <label className="form-label" id="file-label">FILE</label>
+      <div className="file-group">
+        <div className="row-group">
+        <div className="column-group">
+          <label htmlFor="mbti-me" className="form-label sub-label">IMAGE</label>
+          <input type="text" className="form-input file-input" id="image-input"           
+              value={inputs.title}
+              onChange={(e) => onInputChange('title', e.target.value)} 
+              placeholder="이미지를 첨부해주세요" 
+              />
+        </div>
+        <button className='button-add'
+                type="button" 
+                onClick={() => alert('11')} 
+                //disabled={inputs.names.length >= 4}
+              >추가하기</button>    
+        </div>
+        <div className="column-group">
+          <label htmlFor="mbti-me" className="form-label sub-label file-input">LINK</label>
+          <input type="text" className="form-input file-input"           
+              value={inputs.title}
+              onChange={(e) => onInputChange('title', e.target.value)} 
+              placeholder="이미지를 첨부해주세요" 
+              />
+        </div>
+        <div className="column-group">
+          <label htmlFor="mbti-me" className="form-label sub-label file-input">MEMO</label>
+          <input type="text" className="form-input file-input"           
+              value={inputs.title}
+              onChange={(e) => onInputChange('title', e.target.value)} 
+              placeholder="이미지를 첨부해주세요" 
+              />
+        </div>
+        <div className='language-group'>
+          <div className="row-group">
+            <div className="column-group">
+              <label htmlFor="mbti-me" className="form-label sub-label">LANGUAGE</label>
+              <select className="form-dropdown" defaultValue="">
+                <option value="" disabled>선택</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="mbti-me" className="form-label sub-label">TITLE</label>
+              <input type="text" className="form-input file-input"           
+              value={inputs.title}
+              onChange={(e) => onInputChange('title', e.target.value)} 
+              placeholder="제목을 입력하세요" 
+              />
+            </div>
+          </div>
+        </div>
+      </div>   
     </div>
   );
 }
