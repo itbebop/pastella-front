@@ -153,7 +153,7 @@ export const postCustomizeData = async (data) => {
 
 // GET /kor-script/customize/pagination?page=1&limit=10
 export const getCustomizedScripts = async (page, limit) => {
-  const response = await fetch(`${API_BASE_URL}/kor-script/customize/pagination?page=${page}&limit=${limit}`, {
+  const response = await fetch(`${API_BASE_URL}/customize/manage/pagination?page=${page}&limit=${limit}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
