@@ -3,111 +3,152 @@ import './ScriptHeader.css';
 
 function ScriptHeader({ inputs, onInputChange }) { // props를 받도록 수정
   return (
-    <div className="body-content">
+    <div className="header-content">
+      <h1>CUSTOMIZE 입력</h1>
       <div className="form-group">
-        <label htmlFor="titleInput" className="form-label">COVER</label>
-        <div className="input-group">
-          <label htmlFor="titleInput" className="form-label sub-label">Cover Title</label>
-          <input type="text" id="titleInput" className="form-input" 
-          value={inputs.title}
-          onChange={(e) => onInputChange('title', e.target.value)} 
-          placeholder="표제를 입력해주세요" 
-          />
+        <div className='title-group'>
+          <div className="row-group">
+            <label htmlFor="titleInput" className="form-label">COVER</label>
+            <div className="column-group">
+              <label htmlFor="titleInput" className="form-label sub-label">COVER TITLE</label>
+              <input type="text" id="titleInput" className="form-input"           
+              value={inputs.title}
+              onChange={(e) => onInputChange('title', e.target.value)} 
+              placeholder="표제를 입력해주세요" 
+              />
+            </div>  
+          </div>
         </div>
-        <span className="form-label">Used:</span>
-        <label htmlFor="used-yes" className="form-radio">Yes</label>
-        <input type="radio" name="used" id="used-yes" value="yes" />
-        <label htmlFor="used-no" className="form-radio">No</label>
-        <input type="radio" name="used" id="used-no" value="no" defaultChecked /> 
-        <span className="form-text">SN: 000000000000</span>
+        
+        <div className='used-group'>
+          <span className="form-label">Used:</span>
+          <label htmlFor="used-yes" className="form-radio">Yes</label>
+          <input type="radio" name="used" id="used-yes" value="yes" />
+          <label htmlFor="used-no" className="form-radio">No</label>
+          <input type="radio" name="used" id="used-no" value="no" defaultChecked /> 
+        </div>        
+        <div className="column-group">
+          <label className="form-label sub-label">Serial Number</label>
+          <input type="text" id="titleInput" className="form-input"           
+          value={inputs.title}
+          onChange={(e) => onInputChange('title', e.target.value)}           
+          />
+        </div>        
       </div>
       <div className="form-group tag-section">
-        <span className="form-label">Tags:</span>
-        <div className="dropdown-container">
-          <select className="form-dropdown" id="gender" defaultValue="">
-            <option value="" disabled>성별</option>
-            <option value="tag1">남성</option>
-            <option value="tag2">여성</option>
-            <option value="tag3">무관</option>
-          </select>
-          <select className="form-dropdown" id="age" defaultValue="">
-            <option value="" disabled>연령</option>
-            <option value="tag1">10대</option>
-            <option value="tag2">20대</option>
-            <option value="tag3">30대</option>
-            <option value="tag4">40대</option>
-            <option value="tag5">50대 이상</option>
-            <option value="tag6">무관</option>
-          </select>
-          <select className="form-dropdown" id="job" defaultValue="">
-            <option value="" disabled>직업</option>
-            <option value="tag1">학생</option>
-            <option value="tag2">직장인</option>
-            <option value="tag3">프리랜서</option>
-            <option value="tag4">기타</option>
-            <option value="tag5">무관</option>
-          </select>
-          <select className="form-dropdown" id="love" defaultValue="">
-            <option value="" disabled>연애상태</option>
-            <option value="tag1">싱글</option>
-            <option value="tag2">썸</option>
-            <option value="tag3">연애</option>
-            <option value="tag4">결혼</option>
-            <option value="tag5">무관</option>
-          </select>
-          <select className="form-dropdown" id="mbti-me" defaultValue="">
-            <option value="" disabled>MBTI</option>
-            <option value="tag1">ENFJ</option>
-            <option value="tag2">ENFP</option>
-            <option value="tag3">ENTJ</option>
-            <option value="tag4">ENTP</option>
-            <option value="tag5">ESFJ</option>
-            <option value="tag6">ESFP</option>
-            <option value="tag7">ESTJ</option>
-            <option value="tag8">ESTP</option>
-            <option value="tag9">INFJ</option>
-            <option value="tag10">INFP</option>
-            <option value="tag11">INTJ</option>
-            <option value="tag12">ISTP</option>
-            <option value="tag13">ISFJ</option>
-            <option value="tag14">ISFP</option>
-            <option value="tag15">ISTJ</option>
-            <option value="tag16">ISTP</option>
-          </select>
-          <select className="form-dropdown" id="mbti-you" defaultValue="">
-            <option value="" disabled>상대방 MBTI</option>
-            <option value="tag1">ENFJ</option>
-            <option value="tag2">ENFP</option>
-            <option value="tag3">ENTJ</option>
-            <option value="tag4">ENTP</option>
-            <option value="tag5">ESFJ</option>
-            <option value="tag6">ESFP</option>
-            <option value="tag7">ESTJ</option>
-            <option value="tag8">ESTP</option>
-            <option value="tag9">INFJ</option>
-            <option value="tag10">INFP</option>
-            <option value="tag11">INTJ</option>
-            <option value="tag12">ISTP</option>
-            <option value="tag13">ISFJ</option>
-            <option value="tag14">ISFP</option>
-            <option value="tag15">ISTJ</option>
-            <option value="tag16">ISTP</option>
-          </select>
-          <select className="form-dropdown" id="country" defaultValue="" autoComplete="country">
-            <option value="" disabled>컨츄리코드</option>
-            <option value="tag1">KOR</option>
-            <option value="tag2">USA</option>
-            <option value="tag3">ESP</option>
-            <option value="tag4">JPN</option>
-            <option value="tag5">CHN</option>
-            <option value="tag6">VIE</option>
-            <option value="tag7">DEU</option>
-            <option value="tag8">FRN</option>
-          </select>
-          <label htmlFor="hobby" className="form-label">취미</label>
-          <input type="text" id="hobby" className="form-input" />
+        <div className="dropdown-container">          
+        <div className="row-group">
+          <label className="form-label">TAG</label>   
+          <div className="dropdown-container">
+            <div className="column-group">
+              <label htmlFor="mbti-me" className="form-label sub-label">MBTI</label>
+              <select className="form-dropdown" id="mbti-me" defaultValue="">
+                <option value="" disabled>선택</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ESFP">ESFP</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESTP">ESTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="INTJ">INTJ</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISTP">ISTP</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="gender" className="form-label sub-label">SEX</label>
+              <select className="form-dropdown" id="gender" defaultValue="">
+                <option value="" disabled>성별</option>
+                <option value="남성">남성</option>
+                <option value="여성">여성</option>
+                <option value="무관">무관</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="age" className="form-label sub-label">AGE</label>
+              <select className="form-dropdown" id="age" defaultValue="">
+                <option value="" disabled>선택</option>
+                <option value="10대">10대</option>
+                <option value="20대">20대</option>
+                <option value="30대">30대</option>
+                <option value="40대">40대</option>
+                <option value="50대 이상">50대 이상</option>
+                <option value="무관">무관</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="job" className="form-label sub-label">JOB</label>
+              <select className="form-dropdown" id="job" defaultValue="">
+                <option value="" disabled>선택</option>
+                <option value="학생">학생</option>
+                <option value="직장인">직장인</option>
+                <option value="프리랜서">프리랜서</option>
+                <option value="기타">기타</option>
+                <option value="무관">무관</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="love" className="form-label sub-label">LOVE</label>
+              <select className="form-dropdown" id="love" defaultValue="">
+                <option value="" disabled>선택</option>
+                <option value="싱글">싱글</option>
+                <option value="썸">썸</option>
+                <option value="연애">연애</option>
+                <option value="결혼">결혼</option>
+                <option value="무관">무관</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="mbti-you" className="form-label sub-label">counter MBTI</label>
+              <select className="form-dropdown" id="mbti-you" defaultValue="">
+                <option value="" disabled>선택</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ESFP">ESFP</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESTP">ESTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="INTJ">INTJ</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISTP">ISTP</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="country" className="form-label sub-label">Culture</label>
+              <select className="form-dropdown" id="country" defaultValue="" autoComplete="country">
+                <option value="" disabled>선택</option>
+                <option value="KOR">KOR</option>
+                <option value="USA">USA</option>
+                <option value="ESP">ESP</option>
+                <option value="JPN">JPN</option>
+                <option value="CHN">CHN</option>
+                <option value="VIE">VIE</option>
+                <option value="DEU">DEU</option>
+                <option value="FRN">FRN</option>
+              </select>
+            </div>
+            <div className="column-group">
+              <label htmlFor="hobby" className="form-label sub-label">HABIT</label>
+              <input type="text" id="hobby" className="form-input" placeholder="취미를 입력하세요" />
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
